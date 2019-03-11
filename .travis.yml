@@ -8,9 +8,10 @@ install:
    - sudo make
    - sudo cp *.a /usr/lib
 
+before_script:
+    - cd project
+
 script:
-    - git submodule init
-    - git submodule update
     - mkdir _builds
     - cd _builds
     - cmake ..
