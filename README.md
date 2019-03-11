@@ -1,3 +1,5 @@
+[![Build Status](https://img.shields.io/travis/serverzone/Kea-dhcp-hooks.svg?style=flat-square)](https://travis-ci.org/serverzone/Kea-dhcp-hooks)
+
 # Kea-dhcp-hooks
 Kea DHCP hooks:
 * **mac2ipv6** - select IPv6 address via mac address
