@@ -6,9 +6,11 @@ install:
    - cd /usr/src/gtest
    - sudo cmake CMakeLists.txt
    - sudo make
-   - sudo make install
+   - sudo cp *.a /usr/lib
 
 script:
+    - git submodule init
+    - git submodule update
     - mkdir _builds
     - cd _builds
     - cmake ..
