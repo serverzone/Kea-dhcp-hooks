@@ -1,0 +1,4 @@
+[submodule "thirdparty/kea"]
+	path = thirdparty/kea
+	url = https://github.com/isc-projects/kea.git
+	branch = v1_1_0

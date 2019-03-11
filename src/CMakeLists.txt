@@ -1,0 +1,5 @@
+include_directories(../thirdparty/kea/src/lib)
+
+add_library (mac2ipv6 SHARED version.cc load_unload.cc lease6_select.cc)
+
+install(TARGETS mac2ipv6 LIBRARY DESTINATION /usr/local/lib/kea/hooks)
