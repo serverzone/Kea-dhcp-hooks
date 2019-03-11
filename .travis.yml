@@ -1,0 +1,12 @@
+language:
+   - cpp
+
+install:
+   - sudo apt-get install libgtest-dev
+
+script:
+    - mkdir _builds
+    - cd _builds
+    - cmake ..
+    - make
+    - test/tests

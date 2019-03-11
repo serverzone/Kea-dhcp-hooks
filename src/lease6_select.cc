@@ -1,8 +1,8 @@
 #include <hooks/hooks.h>
-#include "lease.h"
-#include "subnet.h"
-#include "mac2ip.h"
+#include <dhcpsrv/lease.h>
+#include <dhcpsrv/subnet.h>
 #include <dhcp/pkt6.h>
+#include "mac2ip.h"
 #include "hook.h"
 
 using namespace isc::dhcp;

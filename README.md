@@ -23,9 +23,9 @@ sudo make install
 ## How to build
 
 ```bash
-mkdir build
+mkdir -p build
 cd build
-cmake ../
+cmake ..
 make
 test/tests
 sudo make install
