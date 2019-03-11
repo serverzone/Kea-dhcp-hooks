@@ -9,7 +9,7 @@ install:
    - sudo cp *.a /usr/lib
 
 before_script:
-    - cd project
+    - cd $TRAVIS_BUILD_DIR
 
 script:
     - mkdir _builds
