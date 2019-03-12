@@ -2,7 +2,7 @@ language:
    - cpp
 
 install:
-   - sudo apt-get install cmake libgtest-dev
+   - sudo apt-get install cmake libgtest-dev libboost-dev
    - cd /usr/src/gtest
    - sudo cmake CMakeLists.txt
    - sudo make
