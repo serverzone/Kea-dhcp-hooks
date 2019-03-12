@@ -1,8 +1,32 @@
 language:
    - cpp
 
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+            - cmake
+            - libgtest-dev
+            - libboost-dev
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+
+before_install:
+    - eval "${MATRIX_EVAL}"
+
 install:
-   - sudo apt-get install libgtest-dev
+   - cd /usr/src/gtest
+   - sudo cmake CMakeLists.txt
+   - sudo make
+   - sudo cp *.a /usr/lib
+
+before_script:
+    - cd $TRAVIS_BUILD_DIR
 
 script:
     - mkdir _builds
