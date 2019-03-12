@@ -1,4 +1,6 @@
-[![Build Status](https://img.shields.io/travis/serverzone/Kea-dhcp-hooks.svg?style=flat-square)](https://travis-ci.org/serverzone/Kea-dhcp-hooks)
+[![Build Status](https://img.shields.io/travis/serverzone/Kea-dhcp-hooks.svg?style=flat)](https://travis-ci.org/serverzone/Kea-dhcp-hooks)
+[![GitHub issues](https://img.shields.io/github/issues/serverzone/Kea-dhcp-hooks.svg?style=flat)](https://github.com/serverzone/Kea-dhcp-hooks/issues)
+[![License](https://img.shields.io/github/license/serverzone/Kea-dhcp-hooks.svg?style=flat)](https://github.com/serverzone/Kea-dhcp-hooks)
 
 # Kea-dhcp-hooks
 Kea DHCP hooks:
