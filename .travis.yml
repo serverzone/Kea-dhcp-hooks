@@ -29,8 +29,5 @@ before_script:
     - cd $TRAVIS_BUILD_DIR
 
 script:
-    - mkdir _builds
-    - cd _builds
-    - cmake ..
-    - make
-    - test/tests
+    - bin/compile.sh
+    - build/test/tests

@@ -27,10 +27,8 @@ sudo make install
 ## How to build
 
 ```bash
-mkdir -p build
+bin/compile.sh
 cd build
-cmake ..
-make
 test/tests
 sudo make install
 ```
