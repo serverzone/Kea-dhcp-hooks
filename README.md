@@ -3,10 +3,38 @@
 [![License](https://img.shields.io/github/license/serverzone/Kea-dhcp-hooks.svg?style=flat)](https://github.com/serverzone/Kea-dhcp-hooks)
 
 # Kea-dhcp-hooks
-Kea DHCP hooks:
-* **mac2ipv6** - select IPv6 address via mac address
 
 Compatible with Kea 1.1.0.
+
+## Hooks
+
+### mac2ipv6 hook
+
+Generates and returns the same address as a device would have generated via SLAAC. A use case for this is to return a statefull like address in a stateless network. In our case, UEFI requires a statefull DHCPv6 response, but we don't want to have statefull DHCPv6 it our network.
+
+This hook works properly only in a network with a DHCPv6 relay. When there is no link address forwarded (issue with mikrotik) an error is logged.
+
+This hook doesn't work with devices connected to the same network as dhcpv6 server.
+
+Example of configuration:
+```json
+{
+  "Dhcp6": {
+    "hooks-libraries": [
+        {
+            "library": "/usr/local/lib/kea/hooks/libmac2ipv6.so",
+            "parameters": {
+                "client-classes": [ "b-efi" ]
+            }
+        }
+    ],
+    ...
+}
+```
+
+MAC address-based IP address settings can be restricted to `client-class` clients only by using the
+client-classes parameter. If the parameter is not listed or contains a blank field, the hook is applied
+to all client classes.
 
 ## Require
 
@@ -32,25 +60,3 @@ cd build
 test/tests
 sudo make install
 ```
-
-## How to use mac2ipv6
-
-Example of configuration:
-```json
-{
-  "Dhcp6": {
-    "hooks-libraries": [
-        {
-            "library": "/usr/local/lib/kea/hooks/libmac2ipv6.so",
-            "parameters": {
-                "client-classes": [ "b-efi" ]
-            }
-        }
-    ],
-    ...
-}
-```
-
-MAC address-based IP address settings can be restricted to `client-class` clients only by using the
-client-classes parameter. If the parameter is not listed or contains a blank field, the hook is applied
-to all client classes.
